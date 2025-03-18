@@ -1,8 +1,6 @@
 package datastructure.list.linked.singly;
 
 
-import datastructure.Node;
-
 /**
  * 단일연결리스트
  */
@@ -80,5 +78,19 @@ public class SinglyLinkedList {
             temp.next = pointer.next; //앞 노드와 다음 노드를 이어준다.
         }
         pointer = null; //초기화
+    }
+
+    class Node {
+        private int value; //값
+        private Node next; //포인터
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+
+        public int getValue() {
+            return value;
+        }
     }
 }
