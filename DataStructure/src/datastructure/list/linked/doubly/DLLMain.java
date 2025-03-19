@@ -13,9 +13,9 @@ public class DLLMain {
 
         doublyLinkedList.delete(1);
         doublyLinkedList.printAll();
-        doublyLinkedList.delete(2);
         doublyLinkedList.printAll();
-        doublyLinkedList.delete(19);
         doublyLinkedList.printAll();
+
+        doublyLinkedList.printPrevNode(3);
     }
 }
