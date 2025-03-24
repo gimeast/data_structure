@@ -1,4 +1,5 @@
-package datastructure.stack;
+package datastructure.stack.practice;
+
 
 public class LinkedListStack {
     private Node head;
@@ -23,8 +24,8 @@ public class LinkedListStack {
         Node pointer = this.head;
         Object peek = peek();
         if (pointer.next == null) {
-            this.top = null;
             this.head = null;
+            this.top = null;
             return peek;
         }
 
@@ -44,12 +45,43 @@ public class LinkedListStack {
         return this.top.data;
     }
 
+    public boolean contains(Object data) {
+        Node pointer = this.head;
+        while (pointer.next != null) {
+            if(pointer.data.equals(data))
+                return true;
+            else
+                pointer = pointer.next;
+        }
+
+        if(pointer.data.equals(data)) {
+            return true;
+        }
+        return false;
+    }
+
+    public int size() {
+        int size = 0;
+
+        Node pointer = this.head;
+        if(pointer == null)
+            return 0;
+
+        while (pointer.next != null) {
+            size++;
+            pointer = pointer.next;
+        }
+
+        return size+1;
+    }
+
     class Node {
         private Object data;
         private Node next;
 
         public Node(Object data) {
             this.data = data;
+            this.next = null;
         }
     }
 }
